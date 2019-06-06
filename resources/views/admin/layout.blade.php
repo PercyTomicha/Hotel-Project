@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tchê Ajudo</title>
+    <title>Hotel</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -177,7 +177,7 @@ desired effect
                             <!-- The user image in the navbar-->
                             <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Antônio Dias</span>
+                            <span class="hidden-xs">{{@Auth::user()->nombre}} {{@Auth::user()->apellido_paterno}} {{@Auth::user()->apellido_materno}}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
@@ -237,7 +237,7 @@ desired effect
                 <div class="pull-left info">
                     <p>Antonio Dias</p>
                     <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
                 </div>
             </div>
 
@@ -258,30 +258,12 @@ desired effect
                 <li class="header"><i class="fa fa-star">&nbsp;</i><span><strong><b>Habitaciones</b></strong></span></li>
                 <!-- Optionally, you can add icons to the links -->
                 <li class="active"><a href="#"><i class="fa fa-home"></i> <span>Início</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-book"></i> <span>Clientes</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Minhas Monitorias</a></li>
-
-                        <div class="container">
-                            <!-- <button type="button" class="btn btn-default btn-sm">Cadastrar Monitorias</button> -->
-                        </div>
-                        <!--Teste modal-->
-
-                        <!--Teste modal-->
-                        <li><a href="#">Meus Ratings</a></li>
-                    </ul>
+                <li><a href="#"><i class="fa fa-book"></i>
+                        <span>Clientes</span></a>
                 </li>
                 <li><a href="#"><i class="fa fa-support"></i>
                         <span>Reservas</span></a>
                 </li>
-
-
-
                 <li><a href="{{route('logout') }}"><i class="fa fa-close"></i>
                         <span>Salir</span>
                     </a>
@@ -297,122 +279,7 @@ desired effect
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>Sistema de informacion<small>-HOTEL</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>
-
-                    <!--Teste modal-->
-
-                    <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search">&nbsp;</span>Avançada</button>&nbsp;&nbsp;&nbsp;
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">Cadastrar Monitorias</button>
-                    <div class="modal modal-info fade" id="modal-info" style="display: none;">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">X</span></button>
-                                    <h4 class="modal-title">Cadastro de Monitorias</h4>
-                                </div>
-                                <div class="modal-body">
-
-
-
-                                    <!-- TESTE DE SCROLL area -->
-
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h6>Categoria:</h6>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <!-- Trigger modal using -->
-                                            <select class="form-control">
-                                                <option>selecionar Monitoria</option>
-                                                <option data-toggle="modal" data-target="#myModal">HTML5 & CSS3</option>
-                                                <option data-toggle="modal" data-target="#myModal">Javascript</option>
-                                                <option data-toggle="modal" data-target="#myModal">ANGULAR</option>
-                                                <option data-toggle="modal" data-target="#myModal">NODE</option>
-                                                <option data-toggle="modal" data-target="#myModal">PHP</option>
-                                                <option data-toggle="modal" data-target="#myModal">JAVA</option>
-                                                <option data-toggle="modal" data-target="#myModal">Banco de Dados 1</option>
-                                                <option data-toggle="modal" data-target="#myModal">Banco de Dados 2</option>
-                                                <option data-toggle="modal" data-target="#myModal">Algorítimos 1</option>
-                                                <option data-toggle="modal" data-target="#myModal">Algorítimos 2</option>
-                                                <option data-toggle="modal" data-target="#myModal">Algorítimos 3</option>
-                                                <option data-toggle="modal" data-target="#myModal">Sistemas Distribuidos</option>
-                                            </select>
-                                        </div>
-                                    </div>&nbsp;
-
-
-                                    <!-- TESTE DE SCROLL area -->
-
-                                    <input descritex="my_monitoria" placeholder="Título da monitoria..." required="required" type="text" cols="30" rows="5" class="form-control">&nbsp;
-                                    <textarea placeholder="Digite sua descrição sobre a monitoria..." cols="30" rows="5" class="form-control" style="min-width: 50%"></textarea>
-
-                                    <p><strong><b>1° Passo.</b></strong></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <!-- Teste de botoes proximo - fechar e voltar -->
-
-                                    <button type="button" class="btn btn-outline pull-right" data-toggle="modal" data-target="#myModal1">Próximo</button>
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Cadastro de Monitoria</h4>
-                                                </div>
-                                                <div class="modal-body">
-
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <h6><i class="fa fa-map-marker"></i>&nbsp;&nbsp;&nbsp;Selecionar Local:</h6>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <!-- Trigger modal using -->
-                                                            <select class="form-control">
-                                                                <option><span><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Local...</span></option>
-                                                                <option data-toggle="modal" data-target="#myModal">SENAC-Rs  Bloco 01</option>
-                                                                <option data-toggle="modal" data-target="#myModal">Senac-Rs Bloco 02</option>
-                                                                <option data-toggle="modal" data-target="#myModal">Senac-Rs Salas</option>
-                                                                <option data-toggle="modal" data-target="#myModal">Biblioteca</option>
-                                                                <option data-toggle="modal" data-target="#myModal">Auditório</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>&nbsp;
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default btn-prev">Voltar</button>
-                                                    <button type="button" class="btn btn-default btn-next">Proximo</button>
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- fim do teste btn s-->
-
-                                    <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Fechar</button>&nbsp;
-
-                                </div>
-                            </div>
-                            <!-- /.modal-content -->
-                        </div>
-                        <!-- /.modal-dialog -->
-                    </div>
-
-                    <!--Teste modal-->
-
-
-                </li>
-                <!--
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li> -->
-            </ol>
+            <h1>Sistema de Información I<small> - HOTEL</small></h1>
         </section>
 
         <!-- Main content -->
