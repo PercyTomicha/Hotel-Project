@@ -255,13 +255,20 @@ desired effect
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-                <li class="header"><i class="fa fa-star">&nbsp;</i><span><strong><b>Habitaciones</b></strong></span></li>
-                <!-- Optionally, you can add icons to the links -->
                 <li class="active"><a href="#"><i class="fa fa-home"></i> <span>Início</span></a></li>
                 <li><a href="#"><i class="fa fa-book"></i>
                         <span>Clientes</span></a>
                 </li>
-                <li><a href="#"><i class="fa fa-support"></i>
+                <li><a href="{{route('estado_habitacion.index')}}"><i class="fa fa-support"></i>
+                        <span>Estado de Habitacion</span></a>
+                </li>
+                <li><a href="{{route('tipo_habitacion.index')}}"><i class="fa fa-support"></i>
+                        <span>Tipo de Habitacion</span></a>
+                </li>
+                <li><a href="{{route('habitacion.index')}}"><i class="fa fa-support"></i>
+                        <span>Habitacion</span></a>
+                </li>
+                <li><a href="{{route('reserva.index')}}"><i class="fa fa-support"></i>
                         <span>Reservas</span></a>
                 </li>
                 <li><a href="{{route('logout') }}"><i class="fa fa-close"></i>

@@ -22,4 +22,9 @@ Route::get('/home', 'HomeController@index');
 Route::get('/inicio', function(){
     return view('admin.dashboard');
 });
+Route::resource('estado_habitacion', 'EstadoHabitacionController');
+Route::resource('tipo_habitacion', 'TipoHabitacionController');
+Route::resource('habitacion', 'HabitacionController');
+Route::resource('reserva', 'ReservaController');
+//Route::resource('recibo', 'ReciboController');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
